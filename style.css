@@ -418,7 +418,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(145deg, #0b367b, #05265d);
+  background: linear-gradient(145deg, #10458f, #0b3a7c);
 }
 
 .player-story-card > .video-category {
@@ -461,7 +461,7 @@ button {
 }
 
 .player-story-card > .video-image::after {
-  background: linear-gradient(180deg, rgba(3, 7, 18, 0.04), rgba(3, 7, 18, 0.22));
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.01), rgba(3, 7, 18, 0.08));
 }
 
 @media (max-width: 900px) {
