@@ -67,14 +67,14 @@ button {
 
 .brand-crest {
   display: block;
-  width: clamp(78px, 6.2vw, 92px);
+  width: clamp(70px, 5.5vw, 84px);
   height: auto;
   flex: 0 0 auto;
 }
 
 .brand-name {
   color: #fff;
-  font-size: clamp(2.7rem, 3.8vw, 3.35rem);
+  font-size: clamp(2.35rem, 3.2vw, 2.9rem);
   font-weight: 850;
   line-height: 1;
   letter-spacing: -0.065em;
@@ -89,10 +89,11 @@ button {
 .section-heading p {
   max-width: 100%;
   color: #ffb477;
-  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.3rem);
   font-weight: 400;
   line-height: 1.4;
   text-wrap: balance;
+  transform: translateY(-5px);
 }
 
 /* Six cards fill the available page width as one gallery */
@@ -101,7 +102,7 @@ button {
   flex: 0 0 auto;
   width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 245px));
+  grid-template-rows: repeat(2, minmax(0, 265px));
   gap: clamp(10px, 1vw, 14px);
   align-items: stretch;
 }
@@ -318,11 +319,11 @@ button {
   }
 
   .brand-crest {
-    width: 68px;
+    width: 62px;
   }
 
   .brand-name {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .section-heading {
@@ -330,7 +331,7 @@ button {
   }
 
   .section-heading p {
-    font-size: 1.12rem;
+    font-size: 1.02rem;
   }
 
   .video-grid {
