@@ -93,7 +93,7 @@ button {
   font-weight: 400;
   line-height: 1.4;
   text-wrap: balance;
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 /* Six cards fill the available page width as one gallery */
