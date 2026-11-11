@@ -411,3 +411,61 @@ button {
 .player-story-card .play-button {
   z-index: 3;
 }
+
+
+/* First Player Stories card: label and title above the photo */
+.player-story-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(145deg, #0b367b, #05265d);
+}
+
+.player-story-card > .video-category {
+  position: static;
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin: 12px 12px 5px;
+}
+
+.player-story-card > .video-details {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  min-height: 0;
+  padding: 5px 48px 12px 13px;
+  background: transparent;
+}
+
+.player-story-card > .video-details .video-number {
+  font-size: 0.68rem;
+  margin-bottom: 5px;
+}
+
+.player-story-card > .video-details h2 {
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+}
+
+.player-story-card > .video-details .card-arrow {
+  bottom: 12px;
+}
+
+.player-story-card > .video-image {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 100px;
+  width: 100%;
+  aspect-ratio: auto;
+}
+
+.player-story-card > .video-image::after {
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.04), rgba(3, 7, 18, 0.22));
+}
+
+@media (max-width: 900px) {
+  .player-story-card > .video-image {
+    min-height: 125px;
+  }
+}
