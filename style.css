@@ -427,7 +427,9 @@ button {
   align-self: flex-start;
   width: fit-content;
   max-width: calc(100% - 24px);
-  margin: 12px 12px 5px;
+  margin: 9px 12px 3px;
+  padding: 3px 7px;
+  font-size: 0.58rem;
 }
 
 .player-story-card > .video-details {
@@ -435,17 +437,17 @@ button {
   z-index: 1;
   flex: 0 0 auto;
   min-height: 0;
-  padding: 5px 48px 12px 13px;
+  padding: 3px 48px 7px 13px;
   background: transparent;
 }
 
 .player-story-card > .video-details .video-number {
-  font-size: 0.68rem;
-  margin-bottom: 5px;
+  font-size: 0.60rem;
+  margin-bottom: 3px;
 }
 
 .player-story-card > .video-details h2 {
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
 }
 
 .player-story-card > .video-details .card-arrow {
