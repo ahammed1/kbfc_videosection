@@ -117,7 +117,7 @@ button {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--card-radius);
-  background: linear-gradient(145deg, #ffffff, #f4f6f8);
+  background: linear-gradient(145deg, #c7e3ff, #c7e3ff);
   box-shadow: 0 16px 34px rgba(0, 14, 49, 0.24);
   transform: translateY(0);
   transition:
@@ -418,7 +418,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(145deg, #ffffff, #f4f6f8);
+  background: linear-gradient(145deg, #c7e3ff, #c7e3ff);
 }
 
 .player-story-card > .video-category {
@@ -478,7 +478,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(145deg, #ffffff, #f4f6f8);
+  background: linear-gradient(145deg, #c7e3ff, #c7e3ff);
 }
 
 .third-story-card > .video-category {
@@ -538,7 +538,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(145deg, #ffffff, #f4f6f8);
+  background: linear-gradient(145deg, #c7e3ff, #c7e3ff);
 }
 
 .fifth-story-card > .video-category {
