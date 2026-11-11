@@ -60,21 +60,21 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   color: #fff;
   text-decoration: none;
 }
 
 .brand-crest {
   display: block;
-  width: clamp(38px, 3.8vw, 46px);
+  width: clamp(64px, 5.2vw, 76px);
   height: auto;
   flex: 0 0 auto;
 }
 
 .brand-name {
   color: #fff;
-  font-size: clamp(1.65rem, 2.4vw, 2.05rem);
+  font-size: clamp(2.1rem, 3vw, 2.65rem);
   font-weight: 850;
   line-height: 1;
   letter-spacing: -0.065em;
@@ -88,10 +88,10 @@ button {
 
 .section-heading p {
   max-width: 100%;
-  color: var(--muted);
-  font-size: clamp(0.92rem, 1.25vw, 1.12rem);
-  font-weight: 450;
-  line-height: 1.35;
+  color: #ffb477;
+  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
   text-wrap: balance;
 }
 
@@ -318,11 +318,11 @@ button {
   }
 
   .brand-crest {
-    width: 48px;
+    width: 58px;
   }
 
   .brand-name {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   .section-heading {
