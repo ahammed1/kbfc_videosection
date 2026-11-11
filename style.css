@@ -67,14 +67,14 @@ button {
 
 .brand-crest {
   display: block;
-  width: clamp(64px, 5.2vw, 76px);
+  width: clamp(78px, 6.2vw, 92px);
   height: auto;
   flex: 0 0 auto;
 }
 
 .brand-name {
   color: #fff;
-  font-size: clamp(2.1rem, 3vw, 2.65rem);
+  font-size: clamp(2.7rem, 3.8vw, 3.35rem);
   font-weight: 850;
   line-height: 1;
   letter-spacing: -0.065em;
@@ -89,7 +89,7 @@ button {
 .section-heading p {
   max-width: 100%;
   color: #ffb477;
-  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
   font-weight: 400;
   line-height: 1.4;
   text-wrap: balance;
@@ -318,11 +318,11 @@ button {
   }
 
   .brand-crest {
-    width: 58px;
+    width: 68px;
   }
 
   .brand-name {
-    font-size: 2.1rem;
+    font-size: 2.5rem;
   }
 
   .section-heading {
@@ -330,7 +330,7 @@ button {
   }
 
   .section-heading p {
-    font-size: 0.98rem;
+    font-size: 1.12rem;
   }
 
   .video-grid {
