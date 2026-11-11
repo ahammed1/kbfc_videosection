@@ -1,0 +1,265 @@
+:root {
+  --bg: #050b1f;
+  --card-radius: 16px;
+  --accent: #f8c21a;
+  --blue-glow: rgba(29, 78, 216, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+/* Ambient background glow */
+.bg-glow {
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scene viewport */
+.scatter-scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1400px;
+  max-height: 900px;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.15s ease-out;
+}
+
+/* Central typography */
+.center-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  pointer-events: none;
+  transform: translateZ(40px);
+}
+
+.center-content .tagline {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.center-content h1 {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: normal;
+  line-height: 1.05;
+  background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.45));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Scattered Video Cards */
+.scatter-card {
+  position: absolute;
+  width: 290px;
+  height: 175px;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65), 0 0 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  user-select: none;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s ease,
+              border-color 0.3s ease;
+  animation: flyIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scatter-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.scatter-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Play Button */
+.play-pill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.play-pill svg {
+  fill: #fff;
+  width: 18px;
+  height: 18px;
+  margin-left: 2px;
+}
+
+/* Meta badge & label */
+.card-info {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  z-index: 2;
+}
+
+.card-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Scattered Coordinates & Flight Angles */
+.card-pos-1 {
+  top: 10%;
+  left: 8%;
+  --target-rot: -12deg;
+  --start-x: -300px;
+  --start-y: -250px;
+  --start-rot: -35deg;
+  animation-delay: 0.05s;
+}
+
+.card-pos-2 {
+  top: 6%;
+  left: 48%;
+  --target-rot: 6deg;
+  --start-x: 80px;
+  --start-y: -350px;
+  --start-rot: 25deg;
+  animation-delay: 0.15s;
+}
+
+.card-pos-3 {
+  top: 14%;
+  right: 7%;
+  --target-rot: -7deg;
+  --start-x: 350px;
+  --start-y: -180px;
+  --start-rot: 40deg;
+  animation-delay: 0.22s;
+}
+
+.card-pos-4 {
+  bottom: 14%;
+  left: 6%;
+  --target-rot: 8deg;
+  --start-x: -320px;
+  --start-y: 250px;
+  --start-rot: 30deg;
+  animation-delay: 0.1s;
+}
+
+.card-pos-5 {
+  bottom: 8%;
+  left: 38%;
+  --target-rot: -5deg;
+  --start-x: -40px;
+  --start-y: 350px;
+  --start-rot: -20deg;
+  animation-delay: 0.28s;
+}
+
+.card-pos-6 {
+  bottom: 12%;
+  right: 9%;
+  --target-rot: 10deg;
+  --start-x: 320px;
+  --start-y: 280px;
+  --start-rot: 35deg;
+  animation-delay: 0.18s;
+}
+
+/* Entrance Keyframe */
+@keyframes flyIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--start-x), var(--start-y), -200px) rotate(var(--start-rot)) scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(var(--target-rot)) scale(1);
+  }
+}
+
+/* Hover Interaction */
+.scatter-card:hover {
+  transform: translate3d(0, -18px, 120px) rotate(0deg) scale(1.12) !important;
+  z-index: 20;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.85), 0 0 30px rgba(248, 194, 26, 0.3);
+}
+
+.scatter-card:hover img {
+  transform: scale(1.08);
+}
+
+.scatter-card:hover .play-pill {
+  background: var(--accent);
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.scatter-card:hover .play-pill svg {
+  fill: #000;
+}
+
+@media (max-width: 900px) {
+  .scatter-card {
+    width: 200px;
+    height: 120px;
+  }
+  .card-title { font-size: 0.75rem; }
+}
