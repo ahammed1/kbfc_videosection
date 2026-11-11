@@ -60,7 +60,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   color: #fff;
   text-decoration: none;
 }
@@ -98,10 +98,10 @@ button {
 /* Six cards fill the available page width as one gallery */
 .video-grid {
   display: grid;
-  flex: 1;
+  flex: 0 0 auto;
   width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 180px));
   gap: clamp(10px, 1vw, 14px);
   align-items: stretch;
 }
