@@ -117,7 +117,7 @@ button {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--card-radius);
-  background: linear-gradient(145deg, #303943, #202830);
+  background: linear-gradient(145deg, #ffffff, #f4f6f8);
   box-shadow: 0 16px 34px rgba(0, 14, 49, 0.24);
   transform: translateY(0);
   transition:
@@ -418,7 +418,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(145deg, #303943, #202830);
+  background: linear-gradient(145deg, #ffffff, #f4f6f8);
 }
 
 .player-story-card > .video-category {
@@ -478,7 +478,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(145deg, #303943, #202830);
+  background: linear-gradient(145deg, #ffffff, #f4f6f8);
 }
 
 .third-story-card > .video-category {
@@ -538,7 +538,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: linear-gradient(145deg, #303943, #202830);
+  background: linear-gradient(145deg, #ffffff, #f4f6f8);
 }
 
 .fifth-story-card > .video-category {
@@ -590,4 +590,25 @@ button {
   .fifth-story-card > .video-image {
     min-height: 125px;
   }
+}
+
+
+/* White story-card headers: use dark text for clear contrast */
+.player-story-card > .video-details .video-number,
+.third-story-card > .video-details .video-number,
+.fifth-story-card > .video-details .video-number {
+  color: #073b91;
+}
+
+.player-story-card > .video-details h2,
+.third-story-card > .video-details h2,
+.fifth-story-card > .video-details h2 {
+  color: #17212b;
+}
+
+.player-story-card > .video-details .card-arrow,
+.third-story-card > .video-details .card-arrow,
+.fifth-story-card > .video-details .card-arrow {
+  color: #17212b;
+  background: rgba(7, 59, 145, 0.10);
 }
