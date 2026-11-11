@@ -58,6 +58,7 @@ button {
 
 .brand {
   display: inline-flex;
+  transform: translateY(-8px);
   align-items: center;
   gap: 10px;
   margin-bottom: 4px;
