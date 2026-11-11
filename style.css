@@ -1,11 +1,11 @@
 :root {
-  --bg: #050b1f;
-  --surface: #10182b;
-  --accent: #f8c21a;
+  --bg: #073b91;
+  --card-bg: #062b6c;
+  --accent: #ffd21f;
   --lime: #b7f51a;
-  --text: #f7f8fc;
-  --muted: rgba(232, 237, 249, 0.68);
-  --card-radius: 20px;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.78);
+  --card-radius: 18px;
 }
 
 * {
@@ -15,6 +15,7 @@
 }
 
 html {
+  min-height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -23,76 +24,98 @@ body {
   overflow-x: hidden;
   color: var(--text);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(28, 61, 139, 0.3), transparent 48%),
-    radial-gradient(ellipse at 50% 65%, rgba(15, 38, 91, 0.2), transparent 55%),
-    var(--bg);
+  background: var(--bg);
 }
 
 button {
   font: inherit;
 }
 
+/* One continuous full-width KBFC TV section */
 .video-section {
   position: relative;
   isolation: isolate;
-  width: min(100% - 64px, 1320px);
-  margin: 0 auto;
-  padding: clamp(64px, 8vw, 112px) 0 96px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(22px, 3.2vw, 48px) clamp(22px, 4.2vw, 74px) clamp(26px, 3.5vw, 52px);
+  background:
+    radial-gradient(ellipse at 82% 45%, rgba(26, 87, 173, 0.35), transparent 48%),
+    var(--bg);
 }
 
-/* Heading sits above the complete six-video collection */
+/* Brand and description align to the top-left, like the reference */
 .section-heading {
-  max-width: 780px;
-  margin: 0 auto clamp(38px, 5vw, 64px);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 0 clamp(24px, 3vw, 42px);
+  text-align: left;
 }
 
-.section-heading .eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.section-heading h1 {
-  margin-bottom: 14px;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
   color: #fff;
-  font-size: clamp(2rem, 4.4vw, 3.8rem);
+  text-decoration: none;
+}
+
+.brand-crest {
+  display: block;
+  width: clamp(48px, 5.3vw, 66px);
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.brand-name {
+  color: #fff;
+  font-size: clamp(2rem, 3.3vw, 2.8rem);
   font-weight: 850;
-  line-height: 1.04;
-  letter-spacing: -0.055em;
-  text-wrap: balance;
+  line-height: 1;
+  letter-spacing: -0.065em;
+}
+
+.brand-name span {
+  margin-left: 5px;
+  font-weight: 650;
+  letter-spacing: -0.045em;
 }
 
 .section-heading p {
-  max-width: 680px;
-  margin: 0 auto;
+  max-width: 100%;
   color: var(--muted);
-  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.55vw, 1.3rem);
+  font-weight: 450;
+  line-height: 1.5;
   text-wrap: balance;
 }
 
-/* Three-column layout keeps all six videos in a balanced gallery */
+/* Six cards fill the available page width as one gallery */
 .video-grid {
   display: grid;
+  flex: 1;
+  width: 100%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-rows: repeat(2, minmax(220px, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
   align-items: stretch;
 }
 
 .video-card {
   position: relative;
+  display: flex;
   min-width: 0;
+  min-height: 0;
+  flex-direction: column;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--card-radius);
-  background: linear-gradient(145deg, #17223a, #0d1426);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(145deg, #0b367b, #05265d);
+  box-shadow: 0 16px 34px rgba(0, 14, 49, 0.24);
   transform: translateY(0);
   transition:
     transform 420ms cubic-bezier(0.2, 0.75, 0.25, 1),
@@ -102,16 +125,18 @@ button {
 
 .video-card:hover {
   z-index: 2;
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.42);
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 24px 46px rgba(0, 14, 49, 0.38);
 }
 
 .video-image {
   position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
-  aspect-ratio: 1.58 / 1;
-  background: #111827;
+  aspect-ratio: 1.65 / 1;
+  background: #09275a;
 }
 
 .video-image::after {
@@ -119,7 +144,7 @@ button {
   inset: 0;
   content: "";
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(3, 7, 18, 0.1), transparent 42%, rgba(3, 7, 18, 0.38));
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.12), transparent 42%, rgba(3, 7, 18, 0.5));
 }
 
 .video-image img {
@@ -141,10 +166,10 @@ button {
   left: 14px;
   max-width: calc(100% - 28px);
   padding: 7px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   color: #fff;
-  background: rgba(5, 11, 31, 0.66);
+  background: rgba(3, 21, 57, 0.68);
   backdrop-filter: blur(12px);
   font-size: 0.62rem;
   font-weight: 800;
@@ -161,10 +186,10 @@ button {
   width: 48px;
   height: 48px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   color: #fff;
-  background: rgba(5, 11, 31, 0.68);
+  background: rgba(3, 21, 57, 0.68);
   backdrop-filter: blur(10px);
   cursor: pointer;
   transform: translate(-50%, -50%);
@@ -186,13 +211,15 @@ button {
 
 .video-details {
   position: relative;
-  min-height: 104px;
-  padding: 17px 52px 19px 19px;
+  flex: 0 0 auto;
+  min-height: 88px;
+  padding: 14px 52px 16px 17px;
+  background: rgba(3, 24, 66, 0.78);
 }
 
 .video-number {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
   color: var(--accent);
   font-size: 0.61rem;
   font-weight: 800;
@@ -202,7 +229,7 @@ button {
 
 .video-details h2 {
   color: #fff;
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  font-size: clamp(0.98rem, 1.25vw, 1.18rem);
   font-weight: 750;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -210,15 +237,15 @@ button {
 
 .card-arrow {
   position: absolute;
-  right: 16px;
-  bottom: 17px;
+  right: 15px;
+  bottom: 15px;
   display: grid;
-  width: 32px;
-  height: 32px;
+  width: 31px;
+  height: 31px;
   place-items: center;
   border-radius: 50%;
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.13);
   font-size: 1.1rem;
   transition: color 250ms ease, background 250ms ease, transform 250ms ease;
 }
@@ -229,9 +256,9 @@ button {
   transform: translate(2px, -2px);
 }
 
-/* Highlight the two middle-column features, as in the supplied reference */
+/* Lime feature cards retain the visual accent from the first reference */
 .video-card--featured {
-  border-color: rgba(183, 245, 26, 0.55);
+  border-color: rgba(183, 245, 26, 0.7);
   background: var(--lime);
 }
 
@@ -257,48 +284,70 @@ button {
   background: #101b0a;
 }
 
+@media (min-width: 1500px) {
+  .video-grid {
+    grid-template-rows: repeat(2, minmax(280px, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .video-section {
-    width: min(100% - 40px, 760px);
+    min-height: 100vh;
+    padding: 28px 24px 34px;
   }
 
   .video-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-rows: none;
+    grid-auto-rows: minmax(230px, auto);
+    gap: 17px;
   }
 
-  .video-details {
-    min-height: 96px;
+  .video-image {
+    min-height: 165px;
   }
 }
 
 @media (max-width: 560px) {
   .video-section {
-    width: min(100% - 32px, 420px);
-    padding-top: 56px;
-    padding-bottom: 64px;
+    padding: 24px 16px 28px;
+  }
+
+  .brand {
+    gap: 9px;
+    margin-bottom: 17px;
+  }
+
+  .brand-crest {
+    width: 48px;
+  }
+
+  .brand-name {
+    font-size: 2rem;
   }
 
   .section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 23px;
   }
 
-  .section-heading h1 {
-    font-size: clamp(2rem, 10vw, 2.7rem);
+  .section-heading p {
+    font-size: 0.98rem;
   }
 
   .video-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    grid-auto-rows: auto;
+    gap: 15px;
   }
 
   .video-image {
+    min-height: auto;
     aspect-ratio: 1.65 / 1;
   }
 
   .video-details {
-    min-height: 88px;
-    padding: 15px 50px 16px 16px;
+    min-height: 82px;
+    padding: 13px 48px 14px 15px;
   }
 }
 
