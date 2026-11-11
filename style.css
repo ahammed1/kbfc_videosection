@@ -531,3 +531,63 @@ button {
     min-height: 125px;
   }
 }
+
+
+/* Fifth card uses the compact label-and-title header above its photo */
+.fifth-story-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(145deg, #0b367b, #05265d);
+}
+
+.fifth-story-card > .video-category {
+  position: static;
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  margin: 9px 12px 3px;
+  padding: 3px 7px;
+  font-size: 0.58rem;
+}
+
+.fifth-story-card > .video-details {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  min-height: 0;
+  padding: 3px 48px 7px 13px;
+  background: transparent;
+}
+
+.fifth-story-card > .video-details .video-number {
+  font-size: 0.60rem;
+  margin-bottom: 3px;
+}
+
+.fifth-story-card > .video-details h2 {
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+}
+
+.fifth-story-card > .video-details .card-arrow {
+  bottom: 12px;
+}
+
+.fifth-story-card > .video-image {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 100px;
+  width: 100%;
+  aspect-ratio: auto;
+}
+
+.fifth-story-card > .video-image::after {
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.01), rgba(3, 7, 18, 0.08));
+}
+
+@media (max-width: 900px) {
+  .fifth-story-card > .video-image {
+    min-height: 125px;
+  }
+}
