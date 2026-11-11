@@ -361,3 +361,53 @@ button {
     animation-duration: 0.01ms !important;
   }
 }
+
+
+/* Player Stories: keep the number and player name over the shaded photo */
+.player-story-card .video-image {
+  position: relative;
+}
+
+.player-story-card .video-image::after {
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 7, 18, 0.18) 0%,
+    rgba(3, 7, 18, 0.04) 34%,
+    rgba(3, 7, 18, 0.82) 100%
+  );
+}
+
+.player-story-card .video-details {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: auto;
+  padding: 38px 48px 18px 15px;
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 15, 42, 0.72) 100%);
+}
+
+.player-story-card .video-number {
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-size: 0.68rem;
+}
+
+.player-story-card .video-details h2 {
+  font-size: clamp(1.15rem, 1.55vw, 1.45rem);
+}
+
+.player-story-card .card-arrow {
+  z-index: 1;
+  bottom: 17px;
+}
+
+.player-story-card .video-category {
+  z-index: 4;
+}
+
+.player-story-card .play-button {
+  z-index: 3;
+}
