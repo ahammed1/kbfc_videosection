@@ -434,7 +434,7 @@ button {
 
 .player-story-card > .video-details {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   flex: 0 0 auto;
   min-height: 0;
   padding: 3px 48px 7px 13px;
@@ -617,10 +617,11 @@ button {
 /* Make the first card's YouTube arrow reliably clickable */
 .player-story-card > .video-details > a.card-arrow {
   position: absolute;
-  z-index: 20;
+  z-index: 30;
   display: grid;
   pointer-events: auto;
   cursor: pointer;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
