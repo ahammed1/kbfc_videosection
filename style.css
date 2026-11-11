@@ -612,3 +612,15 @@ button {
   color: #17212b;
   background: rgba(7, 59, 145, 0.10);
 }
+
+
+/* Make the first card's YouTube arrow reliably clickable */
+.player-story-card > .video-details > a.card-arrow {
+  position: absolute;
+  z-index: 20;
+  display: grid;
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
